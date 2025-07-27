@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>California's Great America - California Coaster Craze</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="navbar-center-group">
+      <div class="nav-logo">🎢 California Coaster Craze</div>
+      <a href="index.html" class="btn btn-contribute">← Back to Parks</a>
+    </div>
+    <nav class="nav-links">
+      <a href="mailto:hello@californiacoastercraze.org" class="btn btn-email">hello@californiacoastercraze.org</a>
+    </nav>
+  </header>
+
+  <main class="grid-container">
+    <!-- Park Overview Section -->
+    <section class="section park-overview">
+      <div class="overview-content">
+        <div class="overview-text">
+          <h1>California's Great America</h1>
+          <div class="park-status">
+            
+          </div>
+          <p>Located in Santa Clara, California's Great America features world-class roller coasters and family attractions. From the iconic Flight Deck to the thrilling Gold Striker wooden coaster, this park offers something for every thrill seeker.</p>
+          
+        </div>
+        <div class="overview-image">
+          <img src="https://files.catbox.moe/vvgsc1.jpg" alt="California's Great America aerial view">
+        </div>
+      </div>
+    </section>
+
+    <!-- Major Coasters Grid -->
+    <div class="coasters-grid">
+      <h2 class="section-title">Major Coasters</h2>
+      
+      <div class="coaster-card">
+        <div class="coaster-header" onclick="toggleCoaster(this)">
+          <div class="coaster-image">
+            <img src="https://files.catbox.moe/vvgsc1.jpg" alt="Flight Deck">
+          </div>
+          <div class="coaster-basic-info">
+            <h3>Flight Deck</h3>
+            <div class="intensity-pill">True Intensity Scale: 8.5</div>
+          </div>
+          <div class="expand-icon">▼</div>
+        </div>
+        <div class="coaster-expanded-content">
+          <p>Flight Deck is an inverted roller coaster that takes riders through intense loops and corkscrews while suspended beneath the track. The ride features a dramatic first drop and multiple inversions that provide an adrenaline-pumping experience for thrill seekers.</p>
+          <div class="community-highlight">
+            <strong>Community Highlight:</strong> "The view of the bay area from the top of the first drop is absolutely breathtaking, and the zero-g roll is perfectly executed!"
+          </div>
+          <a href="#" class="btn btn-submit-experience">Add Your Experience</a>
+        </div>
+      </div>
+
+      <div class="coaster-card">
+        <div class="coaster-header" onclick="toggleCoaster(this)">
+          <div class="coaster-image">
+            <img src="https://files.catbox.moe/vvgsc1.jpg" alt="Gold Striker">
+          </div>
+          <div class="coaster-basic-info">
+            <h3>Gold Striker</h3>
+            <div class="intensity-pill">True Intensity Scale: 7.8</div>
+          </div>
+          <div class="expand-icon">▼</div>
+        </div>
+        <div class="coaster-expanded-content">
+          <p>Gold Striker is a wooden roller coaster that delivers classic airtime and thrilling drops. Built by Great Coasters International, this coaster features a traditional out-and-back layout with plenty of airtime hills and banked turns that showcase the beauty of wooden coaster engineering.</p>
+          <div class="community-highlight">
+            <strong>Community Highlight:</strong> "The airtime on this wooden coaster is absolutely insane! Best wooden coaster in California hands down."
+          </div>
+          <a href="#" class="btn btn-submit-experience">Add Your Experience</a>
+        </div>
+      </div>
+
+      <div class="coaster-card">
+        <div class="coaster-header" onclick="toggleCoaster(this)">
+          <div class="coaster-image">
+            <img src="https://files.catbox.moe/vvgsc1.jpg" alt="Demon">
+          </div>
+          <div class="coaster-basic-info">
+            <h3>Demon</h3>
+            <div class="intensity-pill">True Intensity Scale: 6.2</div>
+          </div>
+          <div class="expand-icon">▼</div>
+        </div>
+        <div class="coaster-expanded-content">
+          <p>Demon is a classic Arrow Dynamics looping coaster that features multiple inversions including loops and corkscrews. This steel coaster provides a smooth ride experience with intense G-forces and classic coaster elements that have stood the test of time.</p>
+          <div class="community-highlight">
+            <strong>Community Highlight:</strong> "A classic Arrow looper that still delivers great thrills. The double loops are perfectly executed!"
+          </div>
+          <a href="#" class="btn btn-submit-experience">Add Your Experience</a>
+        </div>
+      </div>
+
+      <div class="coaster-card">
+        <div class="coaster-header" onclick="toggleCoaster(this)">
+          <div class="coaster-image">
+            <img src="https://files.catbox.moe/vvgsc1.jpg" alt="Patriot">
+          </div>
+          <div class="coaster-basic-info">
+            <h3>Patriot</h3>
+            <div class="intensity-pill">True Intensity Scale: 7.1</div>
+          </div>
+          <div class="expand-icon">▼</div>
+        </div>
+        <div class="coaster-expanded-content">
+          <p>Patriot is a floorless roller coaster that provides riders with an unobstructed view of the track ahead. The ride features smooth inversions and a layout that maximizes the thrill factor while maintaining rider comfort throughout the experience.</p>
+          <div class="community-highlight">
+            <strong>Community Highlight:</strong> "The floorless design makes every element feel more intense. Great for families and thrill seekers alike!"
+          </div>
+          <a href="#" class="btn btn-submit-experience">Add Your Experience</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pro Tips & Planning -->
+    <section class="section pro-tips">
+      <div class="pro-tips-header">
+        <h2>Pro Tips & Planning</h2>
+        <div class="header-controls">
+          <a href="#" class="btn btn-submit-tip">Submit a Pro Tip</a>
+          <div class="filter-container">
+            <label for="tip-filter">Filter by:</label>
+            <select id="tip-filter" class="tip-filter">
+              <option value="all">All Tips</option>
+              <option value="timing">Timing</option>
+              <option value="food">Food & Drinks</option>
+              <option value="transportation">Transportation</option>
+              <option value="strategy">Strategy</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="tips-grid">
+        <div class="tip-item" data-category="strategy">
+          <div class="tip-tag">Strategy</div>
+          <div class="tip-icon">🎯</div>
+          <div class="tip-content">
+            <h4>Best Ride Order</h4>
+            <p>Start with Flight Deck, then hit Gold Striker before the crowds build up. Patriot is usually a walk-on later in the day.</p>
+          </div>
+        </div>
+        <div class="tip-item" data-category="timing">
+          <div class="tip-tag">Timing</div>
+          <div class="tip-icon">⏰</div>
+          <div class="tip-content">
+            <h4>Timing Tips</h4>
+            <p>Visit on weekdays during the school year for shortest lines. Summer weekends can get very busy.</p>
+          </div>
+        </div>
+        <div class="tip-item" data-category="food">
+          <div class="tip-tag">Food & Drinks</div>
+          <div class="tip-icon">🍔</div>
+          <div class="tip-content">
+            <h4>Food & Drinks</h4>
+            <p>Bring a water bottle - refill stations are available. The BBQ place near Gold Striker is worth the wait.</p>
+          </div>
+        </div>
+        <div class="tip-item" data-category="transportation">
+          <div class="tip-tag">Transportation</div>
+          <div class="tip-icon">🚗</div>
+          <div class="tip-content">
+            <h4>Getting There</h4>
+            <p>Parking is $25. Consider taking VTA light rail to Great America station for $2.50 each way.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ride Status & Submit Experience -->
+    <div class="status-submit-grid">
+      <!-- Latest Update -->
+      <section class="section latest-update">
+        <h2>Latest Update</h2>
+        <p>Gold Striker received new track work and is running smoother than ever. Flight Deck's queue times have been consistently under 15 minutes during weekday visits.</p>
+        <div class="update-date">Updated: January 15, 2025</div>
+        <a href="#" class="btn btn-report-status">Report Status Update</a>
+      </section>
+
+      <!-- Submit Your Tips -->
+      <section class="section submit-tips">
+        <div class="submit-content">
+          <div class="submit-text">
+            <h2>Share Your Experience</h2>
+            <p>Know a hidden gem or have better stats? Help us expand our database with your insider knowledge.</p>
+          </div>
+          <div class="submit-actions">
+            <a href="#" class="btn btn-submit-coaster">Submit a Coaster</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 Coaster Craze • Built by and for coaster nerds 🎢</p>
+  </footer>
+
+  <script>
+    function toggleCoaster(element) {
+      const card = element.closest('.coaster-card');
+      const expandedContent = card.querySelector('.coaster-expanded-content');
+      const expandIcon = card.querySelector('.expand-icon');
+      
+      if (expandedContent.style.display === 'block') {
+        expandedContent.style.display = 'none';
+        expandIcon.textContent = '▼';
+      } else {
+        expandedContent.style.display = 'block';
+        expandIcon.textContent = '▲';
+      }
+    }
+
+    // Tip filter functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const tipFilter = document.getElementById('tip-filter');
+      const tipItems = document.querySelectorAll('.tip-item');
+
+      tipFilter.addEventListener('change', function() {
+        const selectedCategory = this.value;
+        
+        tipItems.forEach(item => {
+          const itemCategory = item.getAttribute('data-category');
+          
+          if (selectedCategory === 'all' || itemCategory === selectedCategory) {
+            item.style.display = 'block';
+            item.style.opacity = '1';
+            item.style.transform = 'scale(1)';
+          } else {
+            item.style.display = 'none';
+            item.style.opacity = '0';
+            item.style.transform = 'scale(0.8)';
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
+

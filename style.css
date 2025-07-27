@@ -191,6 +191,31 @@
     line-height: 1.6;
   }
 
+  .checkmark-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+    flex: 1;
+  }
+
+  .checkmark-list li {
+    position: relative;
+    padding-left: 1.8rem;
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+
+  .checkmark-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--green);
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+
   .coming-soon-group {
     display: flex;
     flex-direction: column;
@@ -229,8 +254,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-height: 140px;
+    min-height: 100px;
     margin-bottom: 1rem;
+    padding: 1.5rem 2rem;
   }
 
   .submit p {
@@ -302,6 +328,39 @@
 
   .btn-contribute:hover {
     background: #6600cc !important;
+  }
+
+  /* New style for the Submit a Coaster button */
+  .btn-submit-coaster {
+    background: var(--green) !important;
+    color: white !important;
+    border-radius: 50px !important;
+    padding: 0.8rem 1.5rem !important;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+  .btn-submit-coaster:hover {
+    background: #1f7a31 !important; /* adjust hover color if needed */
+    transform: translateY(-1px);
+  }
+
+  /* New style for the "Add Your Experience" button */
+  .btn-submit-experience {
+    background: var(--blue) !important;
+    color: white !important;
+    border-radius: 50px !important;
+    padding: 0.6rem 1.2rem !important;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    display: inline-block;
+    margin-top: 1rem; /* Add some space above the button */
+  }
+
+  .btn-submit-experience:hover {
+    background: #0056b3 !important; /* Darker blue on hover */
+    transform: translateY(-1px); /* Slight lift on hover */
   }
 
   .footer {
@@ -782,4 +841,830 @@
     .graypark {
       padding: 2rem;
     }
+  }
+
+  /* CGA Page Specific Styles */
+  
+  /* Park Overview Section */
+  .park-overview {
+    background: var(--light-green);
+    border-color: var(--green);
+  }
+
+  .overview-content {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+
+  .overview-text {
+    flex: 1;
+  }
+
+  .overview-text h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 1rem;
+    color: var(--green);
+  }
+
+  .park-status {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .status-indicator {
+    font-weight: bold;
+    font-size: 1rem;
+  }
+
+  .status-indicator.open {
+    color: var(--green);
+  }
+
+  .status-indicator.closed {
+    color: var(--red);
+  }
+
+  .status-indicator.maintenance {
+    color: var(--orange);
+  }
+
+  .last-updated {
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+  .overview-text p {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .park-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  .detail-item {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .overview-image {
+    flex-shrink: 0;
+    height: 400px;
+  }
+
+  .overview-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+  }
+
+  /* Coasters Grid */
+  .coasters-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    background: var(--light-orange);
+    border: 8px solid var(--orange);
+    border-radius: 30px;
+    padding: 2rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    color: var(--orange);
+    margin-bottom: 1rem;
+  }
+
+  .coaster-card {
+    background: white;
+    border: 4px solid var(--orange);
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    transition: transform 0.2s ease;
+  }
+
+  .coaster-card:hover {
+    transform: translateY(-2px);
+  }
+
+  .coaster-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    cursor: pointer;
+    background: white;
+  }
+
+  .coaster-image {
+    flex-shrink: 0;
+    width: 120px;
+  }
+
+  .coaster-image img {
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .coaster-basic-info {
+    flex: 1;
+  }
+
+  .coaster-basic-info h3 {
+    font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+    color: var(--orange);
+    margin-bottom: 0.5rem;
+  }
+
+  .intensity-pill {
+    background: var(--orange);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: inline-block;
+  }
+
+  .expand-icon {
+    font-size: 1.2rem;
+    color: var(--orange);
+    font-weight: bold;
+    transition: transform 0.2s ease;
+  }
+
+  .coaster-expanded-content {
+    display: none;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-top: 1px solid #eee;
+  }
+
+  .coaster-expanded-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+
+  .community-highlight {
+    background: var(--light-blue);
+    border-left: 4px solid var(--blue);
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .community-highlight strong {
+    color: var(--blue);
+  }
+
+  /* Pro Tips & Planning */
+  .pro-tips {
+    background: var(--light-red);
+    border-color: var(--red);
+  }
+
+  .pro-tips-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .pro-tips h2 {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    color: var(--red);
+    margin: 0;
+  }
+
+  .header-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .filter-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .filter-container label {
+    font-size: 0.9rem;
+    color: var(--red);
+    font-weight: 500;
+  }
+
+  .tip-filter {
+    background: white;
+    border: 2px solid var(--red);
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    color: var(--red);
+    cursor: pointer;
+  }
+
+  .tip-filter:focus {
+    outline: none;
+    border-color: #cc0000;
+  }
+
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .tip-item {
+    background: white;
+    border: 3px solid var(--red);
+    border-radius: 20px;
+    padding: 1.5rem;
+    position: relative;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .tip-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 77, 79, 0.2);
+  }
+
+  .tip-tag {
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    background: var(--red);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .tip-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .tip-content h4 {
+    font-size: 1.1rem;
+    color: var(--red);
+    margin-bottom: 0.5rem;
+  }
+
+  .tip-content p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #333;
+  }
+
+  .submit-tip-link {
+    text-align: center;
+  }
+
+  .btn-submit-tip {
+    background: transparent;
+    color: var(--red);
+    border: 2px solid var(--red);
+    border-radius: 20px;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    display: inline-block;
+    white-space: nowrap;
+  }
+
+  .btn-submit-tip:hover {
+    background: var(--red);
+    color: white;
+    transform: translateY(-1px);
+  }
+
+  /* Ride Status */
+  .ride-status {
+    background: var(--light-gray);
+    border-color: #ccc;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .ride-status h2 {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    color: #333;
+    margin-bottom: 1rem;
+  }
+
+  .ride-status p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    color: #666;
+  }
+
+  .btn-status-check {
+    background: #333;
+    color: white;
+    border: 2px solid #333;
+    border-radius: 25px;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    display: inline-block;
+  }
+
+  .btn-status-check:hover {
+    background: #000;
+    border-color: #000;
+    transform: translateY(-1px);
+  }
+
+  /* Status Submit Grid */
+  .status-submit-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  /* Submit Tips */
+  .submit-tips {
+    background: var(--light-teal);
+    border-color: var(--teal);
+  }
+
+  .submit-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    gap: 1.5rem;
+  }
+
+  .submit-text h2 {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    color: var(--teal);
+    margin-bottom: 1rem;
+  }
+
+  .submit-text p {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    line-height: 1.6;
+  }
+
+  .submit-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  /* Pro Tips - Reduced Height */
+  .tip-item {
+    background: white;
+    border: 3px solid var(--red);
+    border-radius: 20px;
+    padding: 1.2rem;
+    position: relative;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .tip-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 77, 79, 0.2);
+  }
+
+  .tip-tag {
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    background: var(--red);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .tip-icon {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+    margin-top: 0.5rem;
+  }
+
+  .tip-content h4 {
+    font-size: 1rem;
+    color: var(--red);
+    margin-bottom: 0.4rem;
+  }
+
+  .tip-content p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: #333;
+  }
+
+  /* Responsive adjustments for CGA page */
+  @media (max-width: 768px) {
+    .overview-content {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .overview-image {
+      width: 100%;
+    }
+
+    .overview-image img {
+      height: 200px;
+    }
+
+    .coaster-header {
+      flex-direction: column;
+      text-align: center;
+      gap: 1rem;
+    }
+
+    .coaster-image {
+      width: 100%;
+    }
+
+    .coaster-image img {
+      height: 150px;
+    }
+
+    .expand-icon {
+      align-self: center;
+    }
+
+    .pro-tips-header {
+      flex-direction: column;
+      text-align: center;
+      gap: 1rem;
+    }
+
+    .header-controls {
+      flex-direction: column;
+      gap: 1rem;
+      width: 100%;
+    }
+
+    .filter-container {
+      justify-content: center;
+    }
+
+    .tips-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .tip-item {
+      text-align: center;
+    }
+
+    .status-submit-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .submit-content {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .submit-actions {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .status-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .overview-content {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .overview-image {
+      width: 100%;
+    }
+
+    .overview-image img {
+      height: 250px;
+    }
+
+    .coaster-header {
+      flex-direction: column;
+      text-align: center;
+      gap: 1rem;
+    }
+
+    .coaster-image {
+      width: 100%;
+    }
+
+    .coaster-image img {
+      height: 200px;
+    }
+
+    .expand-icon {
+      align-self: center;
+    }
+
+    .pro-tips-header {
+      flex-direction: column;
+      text-align: center;
+      gap: 1rem;
+    }
+
+    .header-controls {
+      flex-direction: column;
+      gap: 1rem;
+      width: 100%;
+    }
+
+    .filter-container {
+      justify-content: center;
+    }
+
+    .status-submit-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .latest-update {
+      grid-column: 1 / -1;
+    }
+
+    .submit-content {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .submit-actions {
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 1025px) {
+    .coasters-grid {
+      padding: 2.5rem;
+    }
+
+    .coaster-card {
+      margin-bottom: 1.5rem;
+    }
+
+    .coaster-header {
+      padding: 2rem;
+    }
+
+    .coaster-image {
+      width: 150px;
+    }
+
+    .coaster-image img {
+      height: 100px;
+    }
+
+    .coaster-expanded-content {
+      padding: 2rem;
+    }
+  }
+
+  /* Latest Update */
+  .latest-update {
+    background: var(--light-red);
+    border-color: var(--red);
+  }
+
+  .latest-update h2 {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    color: var(--red);
+    margin-bottom: 2rem;
+  }
+
+  .latest-update p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+
+  .update-date {
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+  }
+
+  .btn-report-status {
+    background: var(--red);
+    border-radius: 50px;
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 800;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    display: inline-block;
+  }
+
+  .btn-report-status:hover {
+    background: #b50217;
+    color: white;
+    transform: translateY(-1px);
+  }
+
+
+  /* Status Submit Grid */
+  .status-submit-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  /* Submit Tips */
+  .submit-tips {
+    background: var(--light-teal);
+    border-color: var(--teal);
+  }
+
+  .submit-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .submit-text h2 {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    color: var(--teal);
+    margin-bottom: 1rem;
+  }
+
+  .submit-text p {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    line-height: 1.6;
+  }
+
+  .submit-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  /* Pro Tips & Planning - Blue Theme */
+  .pro-tips {
+    background: var(--light-blue);
+    border-color: var(--blue);
+  }
+
+  .pro-tips-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .pro-tips h2 {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    color: var(--blue);
+    margin: 0;
+  }
+
+  .header-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .filter-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .filter-container label {
+    font-size: 0.9rem;
+    color: var(--blue);
+    font-weight: 500;
+  }
+
+  .tip-filter {
+    background: white;
+    border: 2px solid var(--blue);
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    color: var(--blue);
+    cursor: pointer;
+  }
+
+  .tip-filter:focus {
+    outline: none;
+    border-color: #0056b3;
+  }
+
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  /* Pro Tips - Reduced Height - Blue Theme */
+  .tip-item {
+    background: white;
+    border: 3px solid var(--blue);
+    border-radius: 20px;
+    padding: 1.2rem;
+    position: relative;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .tip-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
+  }
+
+  .tip-tag {
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    background: var(--blue);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .tip-icon {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+    margin-top: 0.5rem;
+  }
+
+  .tip-content h4 {
+    font-size: 1rem;
+    color: var(--blue);
+    margin-bottom: 0.4rem;
+  }
+
+  .tip-content p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: #333;
+  }
+
+  .btn-submit-tip {
+    background: transparent;
+    color: var(--blue);
+    border: 2px solid var(--blue);
+    border-radius: 20px;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    display: inline-block;
+    white-space: nowrap;
+  }
+
+  .btn-submit-tip:hover {
+    background: var(--blue);
+    color: white;
+    transform: translateY(-1px);
   }
