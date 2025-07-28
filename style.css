@@ -11,6 +11,11 @@
     --light-orange: #fff4e1;
     --light-green: #e9f9ec;
     --light-gray: #f3f3f3;
+    --pink: #C775A4;
+    --dark-pink: #8A5171;
+    --purple: #7700ff;
+    --light-purple: #f3e5f5;
+    --dark-purple: #6600cc;
   }
 
   * {
@@ -29,57 +34,58 @@
 
 
   .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background: white;
-    border: 2px solid #7700ff;
-    border-radius: 50px;
-    margin: 1rem 2rem 2rem 2rem;
-    max-width: calc(100% - 4rem);
-    width: calc(100% - 4rem);
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: white;
+  border: 2px solid #7700ff;
+  border-radius: 50px;
+  margin: 1rem 2rem 2rem 2rem;
+  max-width: calc(100% - 4rem);
+  width: calc(100% - 4rem);
+}
 
-  .navbar-center-group {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-  }
+.navbar-center-group {
+  display: flex;
+  align-items: center;
+  width: 100%; /* Take up full width */
+}
 
-  .nav-logo {
-    font-weight: bold;
-    font-size: 1.5rem;
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
+.nav-logo {
+  margin-right: auto;
+  font-weight: bold;
+  font-size: 1.5rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
 
-  .nav-links {
-    display: flex;
-    align-items: center;
-  }
+.nav-links {
+  display: flex;
+  align-items: center;
+}
 
-  .nav-links a {
-    margin-left: 1.5rem;
-    text-decoration: none;
-    color: #7700ff;
-    font-weight: 500;
-  }
+.nav-links a {
+  margin-left: 15px;
+  text-decoration: none;
+  color: #7700ff;
+  font-weight: 500;
+}
 
-  .nav-links .btn {
-    margin-left: 1.5rem;
-    text-decoration: none;
-    font-weight: 500;
-  }
+.nav-links .btn {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  font-weight: 500;
+}
 
-  .nav-links .btn-email {
-    margin-left: auto;
-    margin-right: 0;
-  }
+.nav-links .btn-email {
+  margin-left: auto;
+  margin-right: 0;
+}
 
-  .nav-links .btn-contribute {
-    margin-left: 1.5rem;
-  }
+.nav-links .btn-contribute {
+  margin-left: auto; /* Push to the right */
+}
 
   main {
     display: flex;
@@ -175,6 +181,7 @@
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
+    text-align: left; /* Add this line */
   }
 
   .greenpark-text h2 {
@@ -332,22 +339,28 @@
 
   /* New style for the Submit a Coaster button */
   .btn-submit-coaster {
-    background: var(--green) !important;
-    color: white !important;
-    border-radius: 50px !important;
-    padding: 0.8rem 1.5rem !important;
-    text-decoration: none;
+    background: var(--blue);
+    color: white;
+    border: 2px solid var(--blue);
+    border-radius: 25px;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
     font-weight: 500;
+    text-decoration: none;
     transition: all 0.2s ease;
+    display: inline-block;
+    border-radius: 100px;
   }
   .btn-submit-coaster:hover {
-    background: #1f7a31 !important; /* adjust hover color if needed */
+    background: #0056b3;
+    border-color: #0056b3;
     transform: translateY(-1px);
+    border-radius: 100px;
   }
 
   /* New style for the "Add Your Experience" button */
   .btn-submit-experience {
-    background: var(--blue) !important;
+    background: var(--pink) !important;
     color: white !important;
     border-radius: 50px !important;
     padding: 0.6rem 1.2rem !important;
@@ -359,7 +372,7 @@
   }
 
   .btn-submit-experience:hover {
-    background: #0056b3 !important; /* Darker blue on hover */
+    background: var(--dark-pink) !important; /* Darker blue on hover */
     transform: translateY(-1px); /* Slight lift on hover */
   }
 
@@ -378,16 +391,13 @@
     }
   }
 
-  @media (max-width: 600px) {
-    .nav-logo {
-      font-size: 0.8rem;
-    }
+  
     
     .navbar-center-group .btn-contribute {
       padding: 0.3rem 0.9rem;
       font-size: 0.9rem;
     }
-  }
+  
 
   @media (max-width: 768px) {
     .navbar {
@@ -395,6 +405,10 @@
       margin: 1rem 1rem 1.5rem 1rem;
       max-width: calc(100% - 2rem);
       width: calc(100% - 2rem);
+    }
+
+    .nav-button {
+      display: none;
     }
     
     .navbar-center-group {
@@ -420,7 +434,7 @@
     
     .greenpark {
       flex-direction: column;
-      text-align: center;
+      
     }
     
     .greenpark img {
@@ -915,12 +929,14 @@
 
   .overview-image {
     flex-shrink: 0;
-    height: 400px;
+    width: 40%; /* Adjust as needed */
+    max-width: 400px; /* Optional: set a maximum width */
+    height: auto; /* Maintain aspect ratio */
   }
 
   .overview-image img {
     width: 100%;
-    height: 400px;
+    height: auto;
     object-fit: cover;
     border-radius: 15px;
   }
@@ -978,29 +994,60 @@
 
   .coaster-basic-info {
     flex: 1;
+    display: flex; /* Add this */
+    align-items: center; /* Vertically align items */
+    justify-content: space-between; /* Distribute space between title and intensity */
   }
 
   .coaster-basic-info h3 {
-    font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+    font-size: clamp(1.5rem, 3vw, 2rem); /* Slightly larger */
     color: var(--orange);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0; /* Remove default margin */
   }
+
+  
+
 
   .intensity-pill {
-    background: var(--orange);
+    background: rgb(100, 100, 100);
+    border: 6px solid;
+    border-color: transparent;
     color: white;
-    padding: 0.3rem 0.8rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    display: inline-block;
+    border-radius: 50px;
+    font-size: 1rem; /* Slightly larger */
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center; /* Vertically align items */
+    justify-content: center; /* Horizontally align items */
+    height: 3rem;
+    line-height: 1;
+    vertical-align: middle;
   }
 
-  .expand-icon {
-    font-size: 1.2rem;
-    color: var(--orange);
-    font-weight: bold;
-    transition: transform 0.2s ease;
+    .intensity-pill.intensity-white {
+    border: 6px solid black;
+    color: black;
+    background: white;
+  }
+  
+  .intensity-pill.intensity-green {
+    border: 6px solid rgb(160, 45, 255);
+  }
+  
+  .intensity-pill.intensity-blue {
+    border: 6px solid rgb(30, 170, 255);
+  }
+  
+  .intensity-pill.intensity-yellow {
+    border: 6px solid rgb(0, 255, 40);
+  }
+  
+  .intensity-pill.intensity-orange {
+    border: 6px solid orange;
+  }
+  
+  .intensity-pill.intensity-red {
+    border: 6px solid red;
   }
 
   .coaster-expanded-content {
@@ -1034,6 +1081,8 @@
   .pro-tips {
     background: var(--light-red);
     border-color: var(--red);
+    padding: 2rem;
+    border-radius: 30px;
   }
 
   .pro-tips-header {
@@ -1142,24 +1191,41 @@
     text-align: center;
   }
 
-  .btn-submit-tip {
-    background: transparent;
-    color: var(--red);
-    border: 2px solid var(--red);
-    border-radius: 20px;
-    padding: 0.4rem 0.8rem;
-    font-size: 0.85rem;
-    font-weight: 500;
-    text-decoration: none;
-    transition: all 0.2s ease;
-    display: inline-block;
-    white-space: nowrap;
-  }
 
-  .btn-submit-tip:hover {
-    background: var(--red);
-    color: white;
-    transform: translateY(-1px);
+    .community-highlight strong {
+      color: var(--blue);
+    }
+  
+   
+  /* Add this media query to move the button on smaller screens */
+  @media (max-width: 768px) {
+    .pro-tips-header {
+      flex-direction: column; /* Stack header elements */
+      align-items: flex-start; /* Align items to the start */
+    }
+
+    .header-controls {
+      width: 100%; /* Make controls take full width */
+      margin-bottom: 1rem; /* Add some space below the controls */
+      justify-content: center; /* Center the filter elements */
+    }
+
+    .filter-container label {
+      font-size: 1rem; /* Increase font size */
+    }
+
+    .submit-tip-link {
+      order: 1; /* Move to the bottom */
+      width: 100%; /* Full width */
+      text-align: center; /* Center the button */
+      margin-bottom: 1rem; /* Add space between button and filter */
+    }
+
+    .btn-submit-tip {
+      display: block; /* Make it a block-level element */
+      width: 100%; /* Full width */
+      box-sizing: border-box; /* Include padding and border in the element's total width */
+    }
   }
 
   /* Ride Status */
@@ -1242,303 +1308,204 @@
     flex-wrap: wrap;
   }
 
-  /* Pro Tips - Reduced Height */
-  .tip-item {
-    background: white;
-    border: 3px solid var(--red);
-    border-radius: 20px;
-    padding: 1.2rem;
-    position: relative;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+.community-highlight strong {
+    color: var(--blue);
   }
 
-  .tip-item:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(255, 77, 79, 0.2);
+  
+  /* CCC Rating Pill */
+  .ccc-rating-container {
+  display: flex;
+  justify-content: space-between;
+  margin-left: auto;
+}
+
+.ccc-rating-label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  padding: 0.6rem 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  position: relative;
+  overflow: hidden;
+  background-color: #FFFFE0;
+  border: 4px solid #b8860b;
+  border-radius: 50px;
+  animation: glow-effect 2s infinite alternate;
+  margin-right: 15px;
+}
+
+.ccc-rating-label::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 20%;
+  height: 200%;
+  opacity: 0.8;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0.1) 100%);
+  transform: rotate(25deg);
+  animation: crisp-shine 4s ease-in-out infinite;
+}
+
+@keyframes glow-effect {
+  from {
+    box-shadow: 0 0 5px #ffd700, 0 0 10px #f0e68c;
+  }
+  to {
+    box-shadow: 0 0 20px #ffd700, 0 0 30px #f0e68c;
+  }
+}
+
+@keyframes crisp-shine {
+  100% {
+    left: 140%;
+  }
+}
+
+.ccc-rating-value {
+  display: inline-block;
+  padding: 0.3rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: white;
+  margin-left: 0.5rem;
+}
+
+.ccc-rating-red {
+  background-color: var(--red);
+}
+
+.ccc-rating-orange {
+  background-color: var(--orange);
+}
+
+.ccc-rating-yellow {
+  background-color: #ffc107;
+}
+
+.ccc-rating-green {
+  background-color: var(--green);
+}
+
+.ccc-rating-blue {
+  background-color: var(--blue);
+}
+
+.ccc-rating-grey {
+  background-color: #bababa;
+}
+
+.mobileonly{
+  display: none;
+}
+
+.desktoponly{
+  display: block;
+}
+
+@media (min-width: 876px) {
+  .coaster-basic-info h3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%; /* Ensure it takes full width */
   }
 
-  .tip-tag {
-    position: absolute;
-    top: -10px;
-    left: 20px;
-    background: var(--red);
-    color: white;
+  .desktoponly{
+display: inline;
+}
+
+
+  .coaster-basic-info h3 span:first-child {
+    flex-grow: 1; /* Allow the title to expand and fill available space */
+    min-width: 0; /* Prevent title from collapsing */
+  }
+
+  .intensity-pill {
+    min-width: 9em; /* Adjust as needed */
+    text-align: center; /* Center the text within the pill */
+    
+
+  }
+
+.ccc-rating-container{
+  min-width: 7em;
+  text-align: center;
+}
+
+}
+
+@media (max-width: 1000px){
+.desktoponly{
+display: none;
+}
+
+.ccc-rating-container{
+  min-width: 5em;
+}
+
+
+}
+
+@media (max-width: 875px) {
+  .ccc-rating-container {
+    margin-left: 0 !important;
+    clear: both;
+    display: block;
+  }
+
+
+
+
+  .mobileonly{
+    display: block;
+  }
+  
+  .coaster-basic-info h3 {
+    margin-bottom: 0.5rem;
+    font-size: clamp(1rem, 2vw, 1.33rem); /* Reduced to 2/3 the original size */
+  }
+  
+  .ccc-rating-label {
+    font-size: 0.7rem;
+    height: 2.2rem;
     padding: 0.3rem 0.8rem;
-    border-radius: 15px;
-    font-size: 0.8rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-
-  .tip-icon {
-    font-size: 1.8rem;
-    margin-bottom: 0.8rem;
     margin-top: 0.5rem;
   }
-
-  .tip-content h4 {
-    font-size: 1rem;
-    color: var(--red);
-    margin-bottom: 0.4rem;
+  
+  .ccc-rating-value {
+    font-size: 0.6rem;
+    padding: 0.2rem 0.5rem;
+    margin-left: 0.4rem;
   }
 
-  .tip-content p {
-    font-size: 0.9rem;
-    line-height: 1.4;
-    color: #333;
-  }
+  .coaster-basic-info {
+  display: flex;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+}
 
-  /* Responsive adjustments for CGA page */
-  @media (max-width: 768px) {
-    .overview-content {
-      flex-direction: column;
-      text-align: center;
-    }
-
-    .overview-image {
-      width: 100%;
-    }
-
-    .overview-image img {
-      height: 200px;
-    }
-
-    .coaster-header {
-      flex-direction: column;
-      text-align: center;
-      gap: 1rem;
-    }
-
-    .coaster-image {
-      width: 100%;
-    }
-
-    .coaster-image img {
-      height: 150px;
-    }
-
-    .expand-icon {
-      align-self: center;
-    }
-
-    .pro-tips-header {
-      flex-direction: column;
-      text-align: center;
-      gap: 1rem;
-    }
-
-    .header-controls {
-      flex-direction: column;
-      gap: 1rem;
-      width: 100%;
-    }
-
-    .filter-container {
-      justify-content: center;
-    }
-
-    .tips-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .tip-item {
-      text-align: center;
-    }
-
-    .status-submit-grid {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
-
-    .submit-content {
-      flex-direction: column;
-      text-align: center;
-    }
-
-    .submit-actions {
-      flex-direction: column;
-      width: 100%;
-    }
-
-    .status-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  @media (min-width: 769px) and (max-width: 1024px) {
-    .overview-content {
-      flex-direction: column;
-      text-align: center;
-    }
-
-    .overview-image {
-      width: 100%;
-    }
-
-    .overview-image img {
-      height: 250px;
-    }
-
-    .coaster-header {
-      flex-direction: column;
-      text-align: center;
-      gap: 1rem;
-    }
-
-    .coaster-image {
-      width: 100%;
-    }
-
-    .coaster-image img {
-      height: 200px;
-    }
-
-    .expand-icon {
-      align-self: center;
-    }
-
-    .pro-tips-header {
-      flex-direction: column;
-      text-align: center;
-      gap: 1rem;
-    }
-
-    .header-controls {
-      flex-direction: column;
-      gap: 1rem;
-      width: 100%;
-    }
-
-    .filter-container {
-      justify-content: center;
-    }
-
-    .status-submit-grid {
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-    }
-
-    .latest-update {
-      grid-column: 1 / -1;
-    }
-
-    .submit-content {
-      flex-direction: column;
-      text-align: center;
-    }
-
-    .submit-actions {
-      flex-direction: column;
-      width: 100%;
-    }
-  }
-
-  @media (min-width: 1025px) {
-    .coasters-grid {
-      padding: 2.5rem;
-    }
-
-    .coaster-card {
-      margin-bottom: 1.5rem;
-    }
-
-    .coaster-header {
-      padding: 2rem;
-    }
-
-    .coaster-image {
-      width: 150px;
-    }
-
-    .coaster-image img {
-      height: 100px;
-    }
-
-    .coaster-expanded-content {
-      padding: 2rem;
-    }
-  }
-
-  /* Latest Update */
-  .latest-update {
-    background: var(--light-red);
-    border-color: var(--red);
-  }
-
-  .latest-update h2 {
-    font-size: clamp(1.8rem, 3vw, 2.5rem);
-    color: var(--red);
-    margin-bottom: 2rem;
-  }
-
-  .latest-update p {
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 1rem;
-    color: #333;
-  }
-
-  .update-date {
-    font-size: 0.9rem;
-    color: #666;
-    font-style: italic;
-    margin-bottom: 1.5rem;
-  }
-
-  .btn-report-status {
-    background: var(--red);
-    border-radius: 50px;
-    padding: 0.8rem 1rem;
-    font-size: 0.9rem;
-    font-weight: 800;
-    text-decoration: none;
-    transition: all 0.2s ease;
-    display: inline-block;
-  }
-
-  .btn-report-status:hover {
-    background: #b50217;
-    color: white;
-    transform: translateY(-1px);
-  }
-
-
-  /* Status Submit Grid */
-  .status-submit-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  /* Submit Tips */
-  .submit-tips {
-    background: var(--light-teal);
-    border-color: var(--teal);
-  }
-
-  .submit-content {
+/* Add extra spacing below the coaster name */
+.coaster-basic-info h3 {
+  margin-bottom: 0.75rem; /* adjust spacing as needed */
+}
+  
+  .intensity-pill {
     display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+    font-size: 0.7rem;
+    vertical-align: middle;
+    border-width: 2px;
+    line-height: 2rem;
+    height: 2rem;
+    min-width: 8.5em;
   }
+}
 
-  .submit-text h2 {
-    font-size: clamp(1.8rem, 3vw, 2.5rem);
-    color: var(--teal);
-    margin-bottom: 1rem;
-  }
-
-  .submit-text p {
-    font-size: clamp(1rem, 2vw, 1.2rem);
-    line-height: 1.6;
-  }
-
-  .submit-actions {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
 
   /* Pro Tips & Planning - Blue Theme */
   .pro-tips {
@@ -1668,3 +1635,379 @@
     color: white;
     transform: translateY(-1px);
   }
+
+  /* Latest Update */
+.latest-update {
+  background: var(--light-red);
+  border-color: var(--red);
+  padding: 2rem;
+  border-radius: 30px;
+}
+
+.latest-update h2 {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  color: var(--red);
+  margin-bottom: 1rem;
+}
+
+.latest-update p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.update-date {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.btn-report-status {
+  background: var(--red);
+  color: white;
+  border-radius: 50px;
+  padding: 0.6rem 1.2rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.btn-report-status:hover {
+  background: #b50217;
+  color: white;
+  transform: translateY(-1px);
+}
+
+/* Adjustments for Park Overview Image */
+.overview-content {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.overview-image {
+  flex-shrink: 0;
+  width: 40%; /* Adjust as needed */
+  max-width: 400px; /* Optional: set a maximum width */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.overview-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+
+
+  @media (max-width: 768px) {
+    .steps-container {
+      flex-direction: column;
+    }
+  }
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .overview-content {
+    flex-direction: column; /* Stack the image and text */
+    align-items: center; /* Center items horizontally */
+    text-align: center; /* Center text within the overview */
+  }
+
+  .overview-image {
+    width: 75%; /* Make the image wider on smaller screens */
+    max-width: none; /* Remove max-width to allow full width */
+    margin-bottom: 1rem; /* Add some space below the image */
+  }
+}
+
+
+
+
+  /* Call-to-Action Section */
+  .call-to-action{
+    background: var(--light-purple);
+    border-color: var(--purple);
+    color: purple;
+  }
+
+
+  /* Community Highlight */
+  .community-highlight strong {
+    color: var(--purple);
+  }
+
+  /* How It Works Progression Line */
+  .steps-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the start (left) */
+    padding-left: 2rem; /* Add some left padding for the line */
+  }
+
+  .step-item {
+    display: flex;
+    align-items: flex-start; /* Align items horizontally */
+    margin-bottom: 2rem;
+    position: relative;
+  }
+
+  .step-item .step-content {
+    margin-left: 0rem;
+  }
+
+  .step-number {
+    background-color: var(--purple);
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    z-index: 1;
+    flex-shrink: 0;
+  }
+
+  .step-item:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 2.5rem; /* Adjust to start below the dot */
+    left: 35px; /* Center the line with the dot */
+    width: 2px;
+    height: calc(100% - 1rem); /* Extend the line to the next dot */
+    background-color: var(--purple);
+    z-index: 0; /* Place the line behind the dot */
+  }
+
+  .step-item h3 {
+    color: var(--purple);
+    margin-top: 0; /* Remove default margin */
+    text-align: left; /* Align text to the left */
+  }
+
+  .step-item p {
+    text-align: left; /* Align text to the left */
+    margin-top: 0.5rem;
+  }
+
+  .step-card {
+    background: white;
+    border: 4px solid var(--purple);
+    border-radius: 20px;
+    padding: 1.5rem;
+    flex: 1;
+    text-align: left;
+  }
+
+  .step-card h3 {
+    font-size: 1.5rem;
+    color: var(--purple);
+    margin-bottom: 1rem;
+  }
+
+  .step-card p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+/* Benefits Section */
+.benefits-card {
+  background: var(--light-purple);
+  border: 8px solid var(--purple);
+  padding: 2.5rem;
+  border-radius: 30px;
+}
+
+.benefits-card h2 {
+  font-size: 2rem;
+  color: var(--purple);
+  margin-bottom: 1.5rem;
+}
+
+.benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+}
+
+.benefits-list li {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  position: relative;
+  padding-left: 1.8rem;
+}
+
+.benefits-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--purple);
+  font-weight: bold;
+}
+
+
+
+  /* Call-to-Action Section */
+  .call-to-action {
+    background: var(--light-purple);
+    border: 8px solid var(--purple);
+    text-align: center;
+    padding: 2.5rem;
+    border-radius: 30px;
+    margin-top: 2rem;
+  }
+  
+  /* Hero Section */
+  .hero-card {
+    background: var(--light-purple);
+    border-color: var(--purple);
+    padding: 2.5rem; /* Add padding */
+    margin-bottom: 2rem; /* Add margin below */
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-text {
+    font-size: 1.2rem;
+    flex-basis: 60%;
+  }
+
+  @media (max-width: 575px) {
+    .hero-text{
+ font-size: 1rem;
+    }
+   
+  }
+
+  .hero-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100%;
+  }
+
+  .hero-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 15%;
+    height: 100%;
+    background: linear-gradient(to right, var(--light-purple), transparent);
+    z-index: 1;
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
+  }
+
+  .hero-card h1 {
+    color: var(--purple);
+    margin-bottom: 1rem; /* Reduce margin below heading */
+    font-size: 8vw;
+    line-height: 1;
+    font-weight: 700;
+  }
+
+  .hero-card p {
+    margin-bottom: 1.5rem; /* Add margin below paragraph */
+  }
+
+  /* Submission Process Section */
+  .submission-process {
+    background: var(--light-purple);
+    border-color: var(--purple);
+    padding: 2.5rem; /* Add padding */
+    margin-bottom: 2rem; /* Add margin below */
+  }
+
+  .submission-process h2 {
+    color: var(--purple);
+    margin-bottom: 1.5rem; /* Add margin below heading */
+  }
+
+  .steps-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the start (left) */
+    padding-left: 0rem; /* Add some left padding for the line */
+  }
+
+  .step-item {
+    display: flex;
+    align-items: flex-start; /* Align items horizontally */
+    margin-bottom: 2rem;
+    position: relative;
+  }
+
+  .step-number {
+    background-color: var(--purple);
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    z-index: 1;
+    margin-right: 1rem; /* Add spacing between the dot and the content */
+  }
+
+  .step-item:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 2.5rem; /* Adjust to start below the dot */
+    left: 15px; /* Center the line with the dot */
+    width: 2px;
+    height: calc(100% + 0.5rem); /* Extend the line to the next dot */
+    background-color: var(--purple);
+    z-index: 0; /* Place the line behind the dot */
+  }
+
+  .step-item h3 {
+    color: var(--purple);
+    margin-top: 0; /* Remove default margin */
+    text-align: left; /* Align text to the left */
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .step-item p {
+    text-align: left; /* Align text to the left */
+  }
+
+  .step-card {
+    background: white;
+    border: 4px solid var(--purple);
+    border-radius: 20px;
+    padding: 1.5rem;
+    flex: 1;
+    text-align: left;
+  }
+
+  .step-card h3 {
+    font-size: 1.5rem;
+    color: var(--purple);
+    margin-bottom: 1rem;
+  }
+
+  .step-card p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
